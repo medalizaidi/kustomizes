@@ -18,7 +18,11 @@ patches:
       kind: Service
       name: minautor-sapient
       version: v1
-
+  - path: ./patches/namespace-patch.yaml
+    target:
+      kind: Namespace
+      name: minautor-sapient
+      version: v1 
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-sapient
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e

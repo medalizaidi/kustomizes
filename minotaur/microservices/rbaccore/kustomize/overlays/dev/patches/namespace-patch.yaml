@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/name
+  value: minotaur-rbaccore
+- op: replace
+  path: /metadata/labels/name
+  value: minotaur-rbaccore

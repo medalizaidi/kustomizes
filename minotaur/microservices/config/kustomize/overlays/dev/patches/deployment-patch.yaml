@@ -9,8 +9,33 @@
     - configMapRef:
         name:  env-configs
     - secretRef:
-        name: sapient-secrets
+        name: config-secrets
 
 - op: add 
   path: /spec/revisionHistoryLimit
   value: 2  
+
+- op: replace
+  path: /metadata/name
+  value: minotaur-config
+- op: replace
+  path: /metadata/labels/app
+  value: minotaur-config
+- op: replace
+  path: /spec/replicas
+  value: 1
+- op: replace
+  path: /spec/selector/matchLabels/app
+  value: minotaur-config
+- op: replace
+  path: /spec/template/metadata/labels/app
+  value: minotaur-config
+- op: replace
+  path: /spec/template/spec/containers/0/name
+  value: minotaur-config
+- op: replace
+  path: /spec/template/spec/containers/0/ports/0/containerPort
+  value: 5000
+- op: replace
+  path: /spec/template/spec/containers/0/imagePullPolicy
+  value: Always
