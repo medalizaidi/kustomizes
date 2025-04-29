@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   labels:
     name: < LABELS-NAMESPACE >
-  name: < NAMESPACE >
+  name: minotaur-rbaccore
