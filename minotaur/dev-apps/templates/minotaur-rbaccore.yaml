@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-minotaur-rbaccore
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec: 
+  destination:
+    namespace: minotaur-rbaccore
+    server: {{ .Values.spec.destination.server }}
+  project: minotaur
+  source:
+    repoURL: {{ .Values.spec.source.repoURL }}
+    path: minautor/microservices/rbaccore/kustomize/overlays/dev
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
