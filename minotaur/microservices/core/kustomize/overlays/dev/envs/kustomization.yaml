@@ -6,13 +6,13 @@ configMapGenerator:
 - envs:
   - config.env 
   name: env-configs
-  namespace: minautor-sapient
+  namespace: minotaur-sapient
 
 secretGenerator:
   - name: sapient-secrets
     envs:
       - secrets.env
-    namespace: minautor-sapient
+    namespace: minotaur-sapient
 
 
 generatorOptions:
