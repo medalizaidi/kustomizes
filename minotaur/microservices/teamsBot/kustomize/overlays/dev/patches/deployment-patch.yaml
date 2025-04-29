@@ -32,7 +32,7 @@
   value: minotaur-teamsbot
 - op: replace
   path: /spec/template/spec/containers/0/name
-  value: minotaur-confteamsbotig
+  value: minotaur-teamsbot
 - op: replace
   path: /spec/template/spec/containers/0/ports/0/containerPort
   value: 5000
