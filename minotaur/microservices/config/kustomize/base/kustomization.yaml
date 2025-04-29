@@ -5,7 +5,6 @@ resources:
     - service.yaml
     - deployment.yaml
     - namespace.yaml
-    - mysql-cm.yaml
 
 generatorOptions:
  disableNameSuffixHash: true

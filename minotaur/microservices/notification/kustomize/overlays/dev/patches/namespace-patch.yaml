@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/name
+  value: minotaur-notification
+- op: replace
+  path: /metadata/labels/name
+  value: minotaur-notification

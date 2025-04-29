@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: minautor-sapient
+namespace: minautor-core
 resources:
   - ../../base
   - envs
@@ -11,14 +11,19 @@ patches:
   - path: ./patches/deployment-patch.yaml
     target:
       kind: Deployment
-      name: minautor-sapient
+      name: minautor-core
       version: v1
   - path: ./patches/service-patch.yaml
     target:
       kind: Service
-      name: minautor-sapient
+      name: minautor-core
       version: v1
+  - path: ./patches/namespace-patch.yaml
+    target:
+      kind: Namespace
+      name: minautor-core
+      version: v1     
 
 images:
-  - name: devavaxiaregistry.azurecr.io/minotaur-sapient
+  - name: devavaxiaregistry.azurecr.io/minotaur-core
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e

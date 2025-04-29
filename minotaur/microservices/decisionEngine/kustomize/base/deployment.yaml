@@ -1,22 +1,41 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: minautor-sapient
-  labels:
-    app: minautor-sapient
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: minautor-sapient
-  template:
-    metadata:
-      labels:
-        app: minautor-sapient
-    spec:
-      containers:
-        - name: minautor-sapient
-          image: < REGISTRY / IMAGE >
-          ports:
-            - containerPort: 5000
-          imagePullPolicy: Always
+
+- op: replace
+  path: /spec/template/spec/containers/0/image
+  value: devavaxiaregistry.azurecr.io/minotaur-sapient
+
+- op: add
+  path: /spec/template/spec/containers/0/envFrom
+  value:
+    - configMapRef:
+        name:  env-configs
+    - secretRef:
+        name: sapient-secrets
+
+- op: add 
+  path: /spec/revisionHistoryLimit
+  value: 2  
+
+- op: replace
+  path: /metadata/name
+  value: minotaur-config
+- op: replace
+  path: /metadata/labels/app
+  value: minotaur-config
+- op: replace
+  path: /spec/replicas
+  value: 1
+- op: replace
+  path: /spec/selector/matchLabels/app
+  value: minotaur-config
+- op: replace
+  path: /spec/template/metadata/labels/app
+  value: minotaur-config
+- op: replace
+  path: /spec/template/spec/containers/0/name
+  value: minotaur-config
+- op: replace
+  path: /spec/template/spec/containers/0/ports/0/containerPort
+  value: 5000
+- op: replace
+  path: /spec/template/spec/containers/0/imagePullPolicy
+  value: Always
