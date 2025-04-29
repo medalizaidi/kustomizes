@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minautor-sapient
+  labels:
+    app: minautor-sapient
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minautor-sapient
+  template:
+    metadata:
+      labels:
+        app: minautor-sapient
+    spec:
+      containers:
+        - name: minautor-sapient
+          image: < REGISTRY / IMAGE >
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always

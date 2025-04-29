@@ -1,0 +1,4 @@
+
+- op: replace 
+  path: /metadata/annotations/app.access.url
+  value: https://minautor-sapient.dev-avaxiagroup.com

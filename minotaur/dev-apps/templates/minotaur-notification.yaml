@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-minotaur-notification
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec: 
+  destination:
+    namespace: minotaur-notification
+    server: {{ .Values.spec.destination.server }}
+  project: minotaur
+  source:
+    repoURL: {{ .Values.spec.source.repoURL }}
+    path: minautor/microservices/notification/kustomize/overlays/dev
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

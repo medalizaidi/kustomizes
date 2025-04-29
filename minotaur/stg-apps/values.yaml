@@ -1,0 +1,6 @@
+spec:
+  destination:
+    server: https://staging-qg8kddyh.hcp.francecentral.azmk8s.io:443
+  source:
+    repoURL: https://github.com/avaxops/kustomizes.git
+    targetRevision: HEAD
