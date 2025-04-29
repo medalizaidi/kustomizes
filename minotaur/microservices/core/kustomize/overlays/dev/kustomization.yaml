@@ -11,17 +11,14 @@ patches:
   - path: ./patches/deployment-patch.yaml
     target:
       kind: Deployment
-      name: minotaur-core
       version: v1
   - path: ./patches/service-patch.yaml
     target:
       kind: Service
-      name: minotaur-core
       version: v1
   - path: ./patches/namespace-patch.yaml
     target:
       kind: Namespace
-      name: minotaur-core
       version: v1     
 
 images:
