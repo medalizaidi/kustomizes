@@ -2,5 +2,5 @@ spec:
   destination:
     server: https://kubernetes.default.svc 
   source:
-    repoURL: git@github.com:mohamedali-zaidi/kustomizes.git
+    repoURL: git@github.com:medalizaidi/kustomizes.git
     targetRevision: main
