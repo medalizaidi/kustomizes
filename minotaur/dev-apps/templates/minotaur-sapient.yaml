@@ -14,6 +14,8 @@ spec:
     repoURL: {{ .Values.spec.source.repoURL }}
     path: minotaur/microservices/sapient/kustomize/overlays/dev
     targetRevision: {{ .Values.spec.source.targetRevision }}
+    kustomize:
+      enableHelm: true
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
