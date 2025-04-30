@@ -9,7 +9,7 @@ resources:
 helmCharts:
 - includeCRDs: true
   name: mysql
-  namespace: minautor-sapient
+  namespace: minotaur-sapient
   releaseName: mysql
   valuesInline:
     auth:
