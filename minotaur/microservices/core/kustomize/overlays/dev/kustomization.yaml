@@ -6,6 +6,39 @@ resources:
   - ../../base
   - envs
 
+helmCharts:
+- includeCRDs: true
+  name: mysql
+  namespace: minautor-sapient
+  releaseName: mysql
+  valuesInline:
+    auth:
+      database: test
+      enableMysqlUser: true
+      password: Avaxia_root@pswd
+      mysqlPassword: Avaxia_root@pswd
+      username: mysql
+    primary:
+      initdb:
+        scriptsConfigMap: minautor-init-scripts
+      persistence:
+        enabled: true
+        existingClaim: ""
+        size: 10Gi
+      resources:
+        limits:
+          cpu: "1"
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512Mi
+            
+helmGlobals:
+  chartHome: charts
+
+
+
+
 
 patches:
   - path: ./patches/deployment-patch.yaml
