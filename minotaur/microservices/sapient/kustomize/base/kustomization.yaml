@@ -7,6 +7,13 @@ resources:
     - namespace.yaml
     - mysql-cm.yaml
 
+helmCharts:
+- name: mysql
+  releaseName: mysql
+  namespace: minotaur-sapient
+helmGlobals:
+  chartHome: ../overlays/dev/charts  # Only needed for local charts
+
 generatorOptions:
  disableNameSuffixHash: true
 

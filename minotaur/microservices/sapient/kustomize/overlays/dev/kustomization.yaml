@@ -7,31 +7,6 @@ resources:
   - ../../base
   - envs
 
-helmCharts:
-- name: mysql
-  version: 8.0.0  # Specify the chart version explicitly
-  repo: https://charts.bitnami.com/bitnami  # Add repo if chart is remote
-  releaseName: mysql
-  namespace: minotaur-sapient
-  valuesInline:
-    auth:
-      database: test
-      password: Avaxia_root@pswd
-      username: mysql
-    primary:
-      persistence:
-        enabled: true
-        size: 10Gi
-      resources:
-        limits:
-          cpu: "1"
-          memory: 1Gi
-        requests:
-          cpu: 500m
-          memory: 512Mi
-
-helmGlobals:
-  chartHome: charts  # Only needed for local charts
 
 patches:
   - path: ./patches/deployment-patch.yaml
