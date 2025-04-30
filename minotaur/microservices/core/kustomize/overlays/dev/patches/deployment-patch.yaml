@@ -11,6 +11,12 @@
     - secretRef:
         name: core-secrets
 - op: add
+  path: /spec/template/spec/containers/0/volumeMounts
+  value:
+    - mountPath: /mnt/data/core
+      name: core-pvc
+
+- op: add
   path: /spec/template/spec/0/volumes
   value:
     - name: core-pvc
