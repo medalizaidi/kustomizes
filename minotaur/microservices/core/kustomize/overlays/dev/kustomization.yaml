@@ -23,7 +23,11 @@ patches:
       kind: Namespace
       name: minotaur-core
       version: v1     
-
+  - path: ./patches/pvc-patch.yaml
+    target:
+      kind: PersistentVolumeClaim
+      name: core-pvc
+      version: v1    
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-core
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e
