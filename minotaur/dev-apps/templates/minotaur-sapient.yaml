@@ -4,8 +4,8 @@ metadata:
   name: dev-minotaur-sapient
   namespace: argocd
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec: 
+    - resources-finalizer.argocd.argoproj.io
+spec:
   destination:
     namespace: minotaur-sapient
     server: {{ .Values.spec.destination.server }}
@@ -15,7 +15,7 @@ spec:
     path: minotaur/microservices/sapient/kustomize/overlays/dev
     targetRevision: {{ .Values.spec.source.targetRevision }}
     kustomize:
-      enableHelm: true
+      enableHelm: true  
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
