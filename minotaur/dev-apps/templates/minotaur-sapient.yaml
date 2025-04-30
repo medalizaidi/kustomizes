@@ -4,7 +4,7 @@ metadata:
   name: dev-minotaur-sapient
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: minotaur-sapient
@@ -15,7 +15,14 @@ spec:
     path: minotaur/microservices/sapient/kustomize/overlays/dev
     targetRevision: {{ .Values.spec.source.targetRevision }}
     kustomize:
-      enableHelm: true  
+      enableHelm: true
+      # Add if using local charts
+      helmOptions:
+        valuesFileSchemes: 
+          - file
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

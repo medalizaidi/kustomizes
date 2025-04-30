@@ -7,13 +7,7 @@ resources:
     - namespace.yaml
     - mysql-cm.yaml
 
-helmCharts:
-- name: mysql
-  releaseName: mysql
-  namespace: minotaur-sapient
-  version: 8.0.0  # Specify the chart version explicitly
-  repo: https://charts.bitnami.com/bitnami  
-  includeCRDs: false
+
 generatorOptions:
  disableNameSuffixHash: true
 
