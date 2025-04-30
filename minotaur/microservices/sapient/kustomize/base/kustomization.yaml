@@ -11,9 +11,9 @@ helmCharts:
 - name: mysql
   releaseName: mysql
   namespace: minotaur-sapient
-helmGlobals:
-  chartHome: ../overlays/dev/charts  # Only needed for local charts
-
+  version: 8.0.0  # Specify the chart version explicitly
+  repo: https://charts.bitnami.com/bitnami  
+  includeCRDs: false
 generatorOptions:
  disableNameSuffixHash: true
 
