@@ -2,28 +2,25 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namespace: minotaur-sapient
+
 resources:
   - ../../base
   - envs
 
 helmCharts:
-- includeCRDs: true
-  name: mysql
-  namespace: minotaur-sapient
+- name: mysql
+  version: 8.0.0  # Specify the chart version explicitly
+  repo: https://charts.bitnami.com/bitnami  # Add repo if chart is remote
   releaseName: mysql
+  namespace: minotaur-sapient
   valuesInline:
     auth:
       database: test
-      enableMysqlUser: true
       password: Avaxia_root@pswd
-      mysqlPassword: Avaxia_root@pswd
       username: mysql
     primary:
-      initdb:
-        scriptsConfigMap: minautor-init-scripts
       persistence:
         enabled: true
-        existingClaim: ""
         size: 10Gi
       resources:
         limits:
@@ -32,28 +29,24 @@ helmCharts:
         requests:
           cpu: 500m
           memory: 512Mi
-            
+
 helmGlobals:
-  chartHome: charts
-
-
+  chartHome: charts  # Only needed for local charts
 
 patches:
   - path: ./patches/deployment-patch.yaml
     target:
       kind: Deployment
       name: minotaur-sapient
-      version: v1
   - path: ./patches/service-patch.yaml
     target:
       kind: Service
       name: minotaur-sapient
-      version: v1
   - path: ./patches/namespace-patch.yaml
     target:
       kind: Namespace
       name: minotaur-sapient
-      version: v1 
+
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-sapient
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e
