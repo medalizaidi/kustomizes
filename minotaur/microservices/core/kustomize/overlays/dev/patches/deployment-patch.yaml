@@ -10,7 +10,12 @@
         name:  env-configs
     - secretRef:
         name: core-secrets
-
+- op: add
+  path: /spec/template/spec/container/0/volumes
+  value:
+    - name: core-pvc
+      persistentVolumeClaim:
+        claimName: core-pvc
 - op: add 
   path: /spec/revisionHistoryLimit
   value: 2  
