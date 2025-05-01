@@ -29,7 +29,7 @@ helmCharts:
           memory: 512Mi
 
 helmGlobals:
-  chartHome: charts  # Only needed for local charts
+  chartHome: charts 
 
 
 patches:
@@ -45,7 +45,10 @@ patches:
     target:
       kind: Namespace
       name: minotaur-sapient
-
+  - path: ./patches/ingress-patch.yaml
+    target:
+      kind: ingress
+      name: minotaur-sapient
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-sapient
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e

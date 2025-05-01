@@ -6,6 +6,7 @@ resources:
     - deployment.yaml
     - namespace.yaml
     - pvc.yaml
+    - ingress.yaml
 generatorOptions:
  disableNameSuffixHash: true
 
