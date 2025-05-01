@@ -1,15 +1,4 @@
-- op: replace
-  path: /metadata/name
-  value: minotaur-sapient
-- op: replace
-  path: /metadata/annotations/cert-manager.io~1cluster-issuer
-  value: letsencrypt-prod
-- op: replace
-  path: /metadata/annotations/kubernetes.io~1ingress.class
-  value: nginx
-- op: replace
-  path: /metadata/annotations/nginx.ingress.kubernetes.io~1rewrite-target
-  value: /$1
+
 - op: replace
   path: /spec/tls/0/hosts/0
   value: minotaur.dev-avaxiagroup.com
@@ -28,6 +17,3 @@
 - op: replace
   path: /spec/rules/0/http/paths/0/backend/service/name
   value: minotaur-sapient
-- op: replace
-  path: /spec/rules/0/http/paths/0/backend/service/port/number
-  value: 80
