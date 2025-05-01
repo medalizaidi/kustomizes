@@ -47,7 +47,7 @@ patches:
       name: minotaur-sapient
   - path: ./patches/ingress-patch.yaml
     target:
-      kind: ingress
+      kind: Ingress
       name: minotaur-sapient
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-sapient
