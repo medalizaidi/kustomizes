@@ -1,15 +1,15 @@
 - op: replace
   path: /metadata/name
-  value: minotaur-teamsbot
+  value: minotaur-extractor
 - op: replace
   path: /spec/rules/0/http/paths/0/path
-  value: /teams/(.*)
+  value: /ext/(.*)
 - op: replace
   path: /spec/rules/0/http/paths/0/pathType
   value: ImplementationSpecific
 - op: replace
   path: /spec/rules/0/http/paths/0/backend/service/name
-  value: minotaur-teamsbot
+  value: minotaur-extractor
 - op: replace
   path: /spec/rules/0/http/paths/0/backend/service/port/number
-  value: 3978
+  value: 80
