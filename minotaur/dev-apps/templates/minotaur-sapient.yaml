@@ -16,10 +16,6 @@ spec:
     targetRevision: {{ .Values.spec.source.targetRevision }}
     kustomize:
       enableHelm: true
-      # Add if using local charts
-      helmOptions:
-        valuesFileSchemes: 
-          - file
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

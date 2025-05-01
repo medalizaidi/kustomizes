@@ -10,7 +10,7 @@ resources:
 helmCharts:
 - name: mysql
   version: 8.0.0
-  repo: https://charts.bitnami.com/bitnami  # Remote repo
+  repo: https://charts.bitnami.com/bitnami  
   releaseName: mysql
   namespace: minotaur-sapient
   valuesInline:
@@ -31,7 +31,7 @@ helmCharts:
           memory: 512Mi
 
 helmGlobals:
-  chartHome: charts  # Only needed for local charts
+  chartHome: charts 
 
 
 patches:
@@ -47,7 +47,10 @@ patches:
     target:
       kind: Namespace
       name: minotaur-sapient
-
+  - path: ./patches/ingress-patch.yaml
+    target:
+      kind: ingress
+      name: minotaur-sapient
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-sapient
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e

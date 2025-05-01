@@ -1,0 +1,10 @@
+- op: replace
+  path: /spec/rules/0/http/paths
+  value:
+    - path: /sapient/(.*)
+      pathType: ImplementationSpecific
+      backend:
+        service:
+          name: minotaur-sapient
+          port:
+            number: 80

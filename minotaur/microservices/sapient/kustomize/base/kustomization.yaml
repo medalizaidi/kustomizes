@@ -6,6 +6,7 @@ resources:
     - deployment.yaml
     - namespace.yaml
     - mysql-cm.yaml
+    - ingress.yaml
 
 
 generatorOptions:
