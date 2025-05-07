@@ -5,6 +5,9 @@
   path: /spec/tls/0/secretName
   value: minotaur-tls
 - op: replace
+  path: /spec/rules/0/host
+  value: minotaur.dev-avaxiagroup.com
+- op: replace
   path: /metadata/name
   value: minotaur-teamsbot
 - op: replace
