@@ -23,6 +23,10 @@ patches:
       kind: Namespace
       name: minotaur-rbacfrontend
       version: v1 
+  - path: ./patches/ingress-patch.yaml
+    target:
+      kind: Ingress
+      name: minotaur-rbacfrontend
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-rbacfrontend
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e

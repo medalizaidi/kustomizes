@@ -26,7 +26,7 @@ patches:
   - path: ./patches/ingress-patch.yaml
     target:
       kind: Ingress
-      name: minotaur-sapient
+      name: minotaur-rbaccore
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-rbaccore
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e
