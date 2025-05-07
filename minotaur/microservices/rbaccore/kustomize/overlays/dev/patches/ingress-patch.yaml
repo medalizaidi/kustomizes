@@ -1,6 +1,4 @@
-- op: replace
-  path: /metadata/name
-  value: minotaur-rbaccore
+
 - op: replace
   path: /spec/rules/0/http/paths/0/path
   value: /api/rbac/?(.*)

@@ -30,7 +30,11 @@ patches:
     target:
       kind: PersistentVolumeClaim
       name: core-pvc
-      version: v1    
+      version: v1   
+  - path: ./patches/ingress-patch.yaml
+    target:
+      kind: Ingress 
+      name: minotaur-core
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-core
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e
