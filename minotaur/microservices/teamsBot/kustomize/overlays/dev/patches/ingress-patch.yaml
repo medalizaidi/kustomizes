@@ -1,4 +1,10 @@
 - op: replace
+  path: /spec/tls/0/hosts/0
+  value: minotaur.dev-avaxiagroup.com
+- op: replace
+  path: /spec/tls/0/secretName
+  value: minotaur-tls
+- op: replace
   path: /metadata/name
   value: minotaur-teamsbot
 - op: replace
