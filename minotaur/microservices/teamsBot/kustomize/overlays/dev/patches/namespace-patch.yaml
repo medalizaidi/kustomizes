@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/name
+  value: minotaur-teamsbot
+- op: replace
+  path: /metadata/labels/name
+  value: minotaur-teamsbot

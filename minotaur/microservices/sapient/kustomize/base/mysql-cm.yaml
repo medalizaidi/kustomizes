@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: minotaur-init-scripts
-  namespace: minautor-sapient
+  namespace: minotaur-sapient
 data:
   create-databases.sql: |
 

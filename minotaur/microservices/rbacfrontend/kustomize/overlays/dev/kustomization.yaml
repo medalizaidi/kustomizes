@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: minautor-sapient
+namespace: minotaur-rbacfrontend
 resources:
   - ../../base
   - envs
@@ -11,14 +11,22 @@ patches:
   - path: ./patches/deployment-patch.yaml
     target:
       kind: Deployment
-      name: minautor-sapient
+      name: minotaur-rbacfrontend
       version: v1
   - path: ./patches/service-patch.yaml
     target:
       kind: Service
-      name: minautor-sapient
+      name: minotaur-rbacfrontend
       version: v1
-
+  - path: ./patches/namespace-patch.yaml
+    target:
+      kind: Namespace
+      name: minotaur-rbacfrontend
+      version: v1 
+  - path: ./patches/ingress-patch.yaml
+    target:
+      kind: Ingress
+      name: minotaur-rbacfrontend
 images:
-  - name: devavaxiaregistry.azurecr.io/minotaur-sapient
+  - name: devavaxiaregistry.azurecr.io/minotaur-rbacfrontend
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e

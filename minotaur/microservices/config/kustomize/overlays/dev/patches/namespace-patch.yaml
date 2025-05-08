@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/name
+  value: minotaur-config
+- op: replace
+  path: /metadata/labels/name
+  value: minotaur-config

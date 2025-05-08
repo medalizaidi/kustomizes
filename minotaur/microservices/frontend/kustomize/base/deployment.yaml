@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: minautor-sapient
+  name: minotaur-frontend
   labels:
-    app: minautor-sapient
+    app: < METADATA-LABELS >
 spec:
-  replicas: 1
+  replicas: < REPLICAS >
   selector:
     matchLabels:
-      app: minautor-sapient
+      app: < SELECTOR-MATCH >
   template:
     metadata:
       labels:
-        app: minautor-sapient
+        app: < TEMPLATE-LABELS >
     spec:
       containers:
-        - name: minautor-sapient
+        - name: < CONTAINERS-NAME >
           image: < REGISTRY / IMAGE >
           ports:
-            - containerPort: 5000
-          imagePullPolicy: Always
+            - containerPort: < CONTAINERS-PORT >
+          imagePullPolicy: < IMAGEPULLPLPLICY >
