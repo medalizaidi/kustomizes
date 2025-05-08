@@ -1,13 +1,13 @@
 
 - op: replace
   path: /spec/tls/0/hosts/0
-  value: minotaur.dev-avaxiagroup.com
+  value: minikube.local
 - op: replace
   path: /spec/tls/0/secretName
   value: minotaur-tls
 - op: replace
   path: /spec/rules/0/host
-  value: minotaur.dev-avaxiagroup.com
+  value: minikube.local
 - op: replace
   path: /spec/rules/0/http/paths/0/path
   value: /sapient/(.*)
