@@ -1,24 +1,54 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: minautor-sapient
+namespace: minotaur-sapient
+
 resources:
   - ../../base
   - envs
+
+helmCharts:
+- name: mysql
+  namespace: minotaur-sapient
+  valuesInline:
+    auth:
+      rootPassword: Avaxia_root@pswd
+      database: test
+      password: Avaxia_root@pswd
+      username: mysql
+    primary:
+      persistence:
+        enabled: true
+        size: 10Gi
+      resources:
+        limits:
+          cpu: "1"
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512Mi
+
+helmGlobals:
+  chartHome: charts 
 
 
 patches:
   - path: ./patches/deployment-patch.yaml
     target:
       kind: Deployment
-      name: minautor-sapient
-      version: v1
+      name: minotaur-sapient
   - path: ./patches/service-patch.yaml
     target:
       kind: Service
-      name: minautor-sapient
-      version: v1
-
+      name: minotaur-sapient
+  - path: ./patches/namespace-patch.yaml
+    target:
+      kind: Namespace
+      name: minotaur-sapient
+  - path: ./patches/ingress-patch.yaml
+    target:
+      kind: Ingress
+      name: minotaur-sapient
 images:
   - name: devavaxiaregistry.azurecr.io/minotaur-sapient
     newTag: 75b1e0a37508709dbcc44ec0788a4bfeafe1351e

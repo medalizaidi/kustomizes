@@ -5,8 +5,8 @@ resources:
     - service.yaml
     - deployment.yaml
     - namespace.yaml
-    - mysql-cm.yaml
-
+    - pvc.yaml
+    - ingress.yaml
 generatorOptions:
  disableNameSuffixHash: true
 

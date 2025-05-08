@@ -1,4 +1,24 @@
-
-- op: replace 
+- op: replace
+  path: /metadata/name
+  value: minotaur-teamsbot
+- op: replace
   path: /metadata/annotations/app.access.url
-  value: https://minautor-sapient.dev-avaxiagroup.com
+  value: http://minotaur.dev.local
+- op: replace
+  path: /spec/type
+  value: ClusterIP
+- op: replace
+  path: /spec/ports/0/name
+  value: http
+- op: replace
+  path: /spec/ports/0/port
+  value: 80
+- op: replace
+  path: /spec/ports/0/protocol
+  value: TCP
+- op: replace
+  path: /spec/ports/0/targetPort
+  value: 5000
+- op: replace
+  path: /spec/selector/app
+  value: minotaur-teamsbot

@@ -1,0 +1,19 @@
+
+- op: replace
+  path: /spec/tls/0/hosts/0
+  value: minikube.local
+- op: replace
+  path: /spec/tls/0/secretName
+  value: minotaur-tls
+- op: replace
+  path: /spec/rules/0/host
+  value: minikube.local
+- op: replace
+  path: /spec/rules/0/http/paths/0/path
+  value: /sapient/(.*)
+- op: replace
+  path: /spec/rules/0/http/paths/0/pathType
+  value: ImplementationSpecific
+- op: replace
+  path: /spec/rules/0/http/paths/0/backend/service/name
+  value: minotaur-sapient

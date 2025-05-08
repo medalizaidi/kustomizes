@@ -12,7 +12,7 @@ spec:
   project: minotaur
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
-    path: minautor/microservices/extractor/kustomize/overlays/dev
+    path: minotaur/microservices/extractor/kustomize/overlays/dev
     targetRevision: {{ .Values.spec.source.targetRevision }}
   syncPolicy:
     syncOptions:
