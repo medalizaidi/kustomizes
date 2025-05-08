@@ -9,7 +9,6 @@ resources:
 
 helmCharts:
 - name: mysql
-  releaseName: mysql
   namespace: minotaur-sapient
   valuesInline:
     auth:
