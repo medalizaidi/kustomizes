@@ -15,6 +15,7 @@ helmCharts:
   namespace: minotaur-sapient
   valuesInline:
     auth:
+      rootPassword: Avaxia_root@pswd
       database: test
       password: Avaxia_root@pswd
       username: mysql
